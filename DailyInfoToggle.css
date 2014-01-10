@@ -1,0 +1,65 @@
+.open-daily-info-config {
+    float: right;
+}
+
+.healthinfo-mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	color: red;
+}
+.healthinfo-mask h2 {
+	background: black;
+	border-radius: 5px;
+    width: 100%;
+    padding: 0.2em 0;
+    text-indent: 1em;
+    color: white;
+}
+.healthinfo-mask .mask {
+	background: black;
+	border-radius: 5px;
+	opacity: 0.5;
+    height: 97%;
+    margin-top: 20px;
+}
+
+.add-remove {
+    position: absolute;
+    background-color: red;
+    opacity: 0.7;
+}
+.add-remove.enabled {
+    background-color: green;
+}
+
+.add-remove a {
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 10px;
+    width: 15px;
+    display: inline-block;
+    text-indent: 4px;
+    background: white;
+    margin-top: 3px;
+    margin-right: 2px;
+    float: right;
+}
+.add-remove a.plus {
+    color: green;
+    border-color: green;
+}
+.add-remove a.minus {
+    color: red;
+    border-color: red;
+}
+
+button.save-form-fields {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: 200px;
+}
