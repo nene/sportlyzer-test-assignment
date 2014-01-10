@@ -1,0 +1,1426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if lte IE 8]><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="ie8 lang-en"><![endif]-->
+<!--[if IE 9]><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="ie9 lang-en"><![endif]-->
+<!--[if gt IE 9]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="noie lang-en"><!--<![endif]--><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="Sportlyzer is a sports coaching software and workout log. We make training planning and performance analysis simple for sports teams.">
+<title>Sportlyzer</title>
+<base href="https://beta.sportlyzer.com/">
+<link href="https://gfx.sportlyzer.com/styles/styles_screen.css?8040" rel="stylesheet" type="text/css">
+<link href="https://gfx.sportlyzer.com/styles/meyer_reset.css" rel="stylesheet" type="text/css">
+<link href="https://gfx.sportlyzer.com/styles/form.css" rel="stylesheet" type="text/css">
+<link href="https://gfx.sportlyzer.com/styles/datepicker.css?1" rel="stylesheet" type="text/css">
+<link href="https://gfx.sportlyzer.com/styles/jquery-ui.custom.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.min.js?5140" style="color: rgb(0, 0, 0);"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.form.js?7813"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.sparkline.js"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.sport.js?7933"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/sport.js?8070"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/datepicker.js"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery-ui.custom.min.js?6165"></script>
+
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/jquery.maskedinput.min.js"></script>
+
+
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/graph.js?7906"></script>
+<script async="" defer="" type="text/javascript" src="js/jszip.js"></script>
+<!--[if lt IE 8]><style>
+.profilepic span { display: inline-block; height: 100%; }
+</style><![endif]-->
+<script type="text/javascript">
+	try {
+		
+		spl.locale = {
+			days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+			daysMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+			months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+			monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+			weekMin: 'wk'
+		};
+		$.extend(spl.request, {
+			nonce : "37682675_d4ae91d0d95815a2a7c88d9fa0a80d55cd230f63",
+			currentDate : Date.createByFormat('2014-01-09','yyyy-mm-dd', '16:17'),
+			currentOffset : 7200,
+			webroot : "https://beta.sportlyzer.com/",
+			fb_app_id: "169488553101138"
+		});
+		$.extend(spl.user, {"id":"30","firstname":"Indrek","lastname":"Altpere","birthday":"1986-05-13","gender":"male","timezone":"Europe\/Helsinki","city":"Tartu","units":"km","date_format":"dd.mm.yyyy","week_start":"monday","time_format":"24H","feed_latest":"2014-01-08 15:06:22","thanks_date":"2011-05-25","datepicker_format":"d.m.Y","today":"09.01.2014","profileCompleted":true});
+		spl.uploadables = "gpx,tcx,xml,kml,kmz,pwx,gdb,fit,fitlog,zip,gz,srm,hrm,xlsx,csv";
+	} catch (Ex) {
+		var trace = printStackTrace({ e: Ex });
+		$.post('https://beta.sportlyzer.com/fileupload.php', { "logexception": trace.join("\n"), "rnd": Math.random() });
+		alert('Page initialization failed, please refresh the page.\nIf this does not resolve the problem, contact us through "Feedback".');
+	}
+	var ___nonce = "48129796_9861320dc877b5b2772845697e9d4ad8b1ff63cc";
+</script>
+<link rel="icon" type="image/png" href="https://gfx.sportlyzer.com/gfx/ico_splyzr.png">
+<link rel="apple-touch-icon" href="https://gfx.sportlyzer.com/apple-touch-icon-114x114-precomposed.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="sys-msg" id="sys-msg" style="display: none;">
+	<div class="wrp" data-zoommessage="Please reset your zoom level by pressing Ctrl+0 or Cmd+0.">Looks like your Sportlyzers time-zone doesn't match with your computers. Please check your <a href="?page=settings"><strong>time-zone here</strong></a>.</div>
+</div>
+<a href="https://beta.sportlyzer.com/?toforum=1&amp;show=feedback" target="_blank" class="feedback-tab">Feedback</a>
+
+
+
+<!-- HEADER -->
+<div class="header">
+	<div class="hd-wrap" style="position: relative">
+				<a href="https://beta.sportlyzer.com/" class="logo">Sportlyzer</a>
+<ul class="mainmenu">
+	<li class="gs-workouts"><a onclick="triggerEvent('athlete_navigation','diary');" href="https://beta.sportlyzer.com/?page=workouts2" class="act"><span class="txt">Diary</span></a></li>
+	<li class="gs-stats"><a onclick="triggerEvent('athlete_navigation','stats');" href="https://beta.sportlyzer.com/?page=stats2"><span class="txt">Stats</span></a></li>
+	<li class="gs-community"><a onclick="triggerEvent('athlete_navigation','community');" href="https://beta.sportlyzer.com/?page=community"><span class="txt">Community</span><span class="count" id="newposts-count">9</span></a></li>
+	<li class="gs-groups"><a onclick="triggerEvent('athlete_navigation','clubs');" href="https://beta.sportlyzer.com/?page=mygroups"><span class="txt">Clubs</span></a></li>
+			<li class="gs-other"><a href="javascript:;" id="usermenu"><img src="https://gfx.sportlyzer.com/upics/4902_35.png" alt="Indrek Altpere" width="25" height="25" class="pic"><span class="txt">Indrek</span><span class="arr-d"></span></a></li>
+</ul>
+<script>
+	$('#usermenu').click(function() {
+		var $this = $(this);
+		if(!$this.hasClass('drop-act')) {
+			$this.addClass('drop-act');
+			$('.user-dropdown').slideDown({ 
+				duration: 300, 
+				easing: 'easeOutBack' 
+			});
+		} else {
+			$this.removeClass('drop-act');
+			$('.user-dropdown').slideUp({ 
+				duration: 150, easing: 'easeInBack' 
+			});
+		}
+	});
+</script>
+<div class="user-dropdown" style="display: none; position: absolute; right: 2px; top: 59px; z-index: 100">
+		<ul class="user-switch">
+			<li>
+				<div class="title">Use Sportlyzer as:</div>
+			</li>
+													<li>
+				<div class="pic"><img src="https://gfx.sportlyzer.com/upics/1804_50.png" width="50" height="50" alt="Sportlyzer dev team" title="Sportlyzer dev team"></div>
+				<a onclick="triggerEvent('drop_down_menu','as_coach');" href="/group/1?action=changeRole" title="Sportlyzer dev team"><span class="role">Coach of:</span><span class="club">Sportlyzer dev team</span></a>
+			</li>
+				</ul>
+		<ul>
+		<li><div class="ico ic-profile"></div><a onclick="triggerEvent('drop_down_menu','profile');" href="https://beta.sportlyzer.com/?page=public&amp;user=30">Profile</a></li>
+		<li><div class="ico ic-goal"></div><a onclick="triggerEvent('drop_down_menu','goals');" href="https://beta.sportlyzer.com/?page=goals">Goals</a></li>
+		<li><div class="ico ic-competitions"></div><a onclick="triggerEvent('drop_down_menu','competitions');" href="https://beta.sportlyzer.com/?page=competitions">Competitions</a></li>		<li><div class="ico ic-tests"></div><a onclick="triggerEvent('drop_down_menu','tests');" href="https://beta.sportlyzer.com/?page=tests&amp;action=history">Tests</a></li>
+		<li><div class="ico ic-friends"></div><a onclick="triggerEvent('drop_down_menu','friends');" href="https://beta.sportlyzer.com/?page=friends">Friends</a></li>
+		<li><div class="ico ic-tutorials"></div><a onclick="triggerEvent('drop_down_menu','learning_tours');" href="https://beta.sportlyzer.com/?page=workouts2&amp;tours=1">Learning tours</a></li>
+		<li><div class="ico ic-tutorials"></div><a onclick="triggerEvent('drop_down_menu','tutorials');" target="_blank" href="https://blog.sportlyzer.com/tutorials/">Tutorials</a></li>
+	</ul>
+	<ul>
+		<li><div class="ico ic-settings"></div><a onclick="triggerEvent('drop_down_menu','settings');" href="https://beta.sportlyzer.com/?page=settings">Settings</a></li>
+		<li><div class="ico ic-logout"></div><a onclick="triggerEvent('drop_down_menu','logout');" href="https://beta.sportlyzer.com/?page=logout">Logout</a></li>
+	</ul>
+			<ul>
+			<li><div class="ico ic-friends"></div><a style="color: #8AFF8A;" href="https://beta.sportlyzer.com//admin" title="This option is available only for admins">Admin's section</a></li>
+			<li><div class="ico ic-goal"></div><a style="color: #8AFF8A;" href="https://beta.sportlyzer.com/?page=translate" title="This option is available only for admins">Translate</a></li>
+			<li><div class="ico ic-goal"></div><a style="color: #8AFF8A;" href="https://beta.sportlyzer.com/?page=translatesport" title="This option is available only for admins">Translate Sports</a></li>
+			<li><div class="ico ic-profile"></div><a style="color: #8AFF8A;" href="https://beta.sportlyzer.com/?page=workouts2&amp;sliders=1" title="This option is available only for admins">Show Sliders</a></li>
+		</ul>
+	</div>			</div>
+</div>
+<!-- //HEADER -->
+<div class="wrapper">
+	<div class="content ">
+		<div class="main">
+				<div class="sub-block">
+	<script>
+		var t_syncing_in_progress = 'Syncing in progress';
+		var t_invalid_login = 'Invalid login!';
+		var t_an_error_occured = 'An error occured!';
+		var t_count_workouts_were_synced = '[count] workouts were synced!';
+		var t_connecting = 'Connecting';
+		var t_do_you_want_to_delete = 'Do you want to delete this workout?';
+	</script>
+						<div class="goal-bar">
+	<div class="ico"></div>
+	<div class="txt">
+		<div class="title">pkdojow</div>
+		<div class="day">11th January 2014</div>
+	</div>
+
+	<div class="goal-time">
+		<span class="time">2:00:00</span>
+		
+		<div class="arrow"></div>
+	</div>
+
+	<div class="goal-track">
+		<div class="pointer" style="left: 57.14%;">
+			<img width="17" height="17" src="https://gfx.sportlyzer.com/upics/4902_35.png" class="pic">
+			<div class="label-gt50">Week 1 / 1</div>
+		</div>
+	</div>
+	<div class="cycles">
+		<div class="highl"></div>
+					<div class="group gr-act">
+							<div class="cycle c3" style="width:650px">
+					<div class="day day-first" title="6th January 2014">01/6</div>
+					<div class="day day-last" title="11th January 2014">01/11</div>				</div>
+						</div>
+			</div>
+
+	<div class="goal-labels">
+														<div class="cycle c-act" style="width:650px">
+						<div class="label c3"><span class="pointer"></span><a href="javascript:;" onclick="spl.show.cycleInfo();">Realization</a></div>
+					</div>
+										</div>
+</div>
+
+	<h1 class="fl-l">Diary</h1>
+	<div class="button-menu">
+		<ul>
+			
+			<li class="remind" style="position: relative"><a href="javascript:;" class="dropdown"><span class="ico reminder"></span><span class="drop-arr"></span><span class="txt">Coach</span></a><ul class="options child" style="z-index: 99"><li data-id="30"><a href="javascript:;" onclick="spl.coach.remind(this)">Indrek Altpere</a></li><li data-id="40"><a href="javascript:;" onclick="spl.coach.remind(this)">Aave Hannus</a></li><li data-id="111"><a href="javascript:;" onclick="spl.coach.remind(this)">Alina A</a></li><li data-id="47"><a href="javascript:;" onclick="spl.coach.remind(this)">Andrus Oks</a></li><li data-id="6599"><a href="javascript:;" onclick="spl.coach.remind(this)">Hanna Liis...</a></li><li data-id="39"><a href="javascript:;" onclick="spl.coach.remind(this)">Hanno Vene</a></li><li data-id="7344"><a href="javascript:;" onclick="spl.coach.remind(this)">Heidi Tubli</a></li><li data-id="6070"><a href="javascript:;" onclick="spl.coach.remind(this)">Ivo Remmelg</a></li><li data-id="5843"><a href="javascript:;" onclick="spl.coach.remind(this)">Jaan Saks</a></li><li data-id="36"><a href="javascript:;" onclick="spl.coach.remind(this)">Jarek Mäestu</a></li><li data-id="32"><a href="javascript:;" onclick="spl.coach.remind(this)">Kalmer Rautam</a></li><li data-id="150"><a href="javascript:;" onclick="spl.coach.remind(this)">Kristina Narusk</a></li><li data-id="7425"><a href="javascript:;" onclick="spl.coach.remind(this)">Marko Tiidla</a></li><li data-id="3347"><a href="javascript:;" onclick="spl.coach.remind(this)">Martin Mooses</a></li><li data-id="37"><a href="javascript:;" onclick="spl.coach.remind(this)">Piret Saag</a></li><li data-id="56"><a href="javascript:;" onclick="spl.coach.remind(this)">Rein Lemberpuu</a></li><li data-id="4995"><a href="javascript:;" onclick="spl.coach.remind(this)">Silver Mikk</a></li><li data-id="33"><a href="javascript:;" onclick="spl.coach.remind(this)">Tõnis Saag</a></li><li data-id="5954"><a href="javascript:;" onclick="spl.coach.remind(this)">Vahur Teller</a></li></ul></li>			<li style="position: relative"><a href="javascript:;" onclick="spl.sync.open(this)" class="sync"><span class="ico sync"></span><span class="txt">Sync</span></a><div class="uploadmenu syncmenu" style="display: none;" id="wo-syncmenu">
+	<ul>
+										
+		<li class="add-rem">
+			<a href="javascript:;" onclick="spl.sync.show(this);">Add or remove trackers</a>
+		</li>
+	</ul>
+</div></li>
+			<li><a href="javascript:;" onclick="openFileUpload('muf_5644', spl.request.nonce, 'hrm,xlsx,csv,gpx,tcx,xml,kml,kmz,pwx,gdb,fit,fitlog,zip,gz,srm', handleSyncFileUpload)"><span class="ico upload"></span><span class="txt">Upload</span></a></li>
+			<li><a href="javascript:;" onclick="spl.graph.settings.open(this)"><span class="ico settings" style="margin-right: 2px"></span><span class="txt">Planner</span></a></li>		</ul>
+	</div>
+	<div class="clear15"></div>
+		<div id="wk-modal" class="popup-wo closeable" style="top: 20px; left: 20px; display: none">
+		<div class="drop" style="display: none;">
+			<div id="up-drop-zone" style="position: absolute; width: 100%; height: 100%; z-index: 1000"></div>
+			<div class="txt">
+				Drop your files here
+				<div class="formats">Only GPX, HRM, TCX, XLSX(Movescount), KML, KMZ, PWX supported</div>
+			</div>
+		</div>
+		<div class="top">
+			
+			<div class="upload"><div class="arrow"></div><div class="formats" title="Supported file formats">HRM,XLSX,CSV,GPX,TCX,XML,KML,KMZ,PWX,GDB,FIT,FITLOG,ZIP,GZ,SRM</div><span>Drag files here or </span><a href="javascript:;" onclick="openFileUpload('wo_'+$('#wk-modal').find('.wid').val(), spl.request.nonce,'hrm,xlsx,csv,gpx,tcx,xml,kml,kmz,pwx,gdb,fit,fitlog,zip,gz,srm',handleWorkoutFileUploadEx)">browse</a></div>
+			<div class="uploading" style="display: none">
+				<div class="loader"></div>
+				<div class="txt">Uploading files (<span class="up-current">0</span> / <span class="up-total">1</span>)</div>
+				<!--<a href="#" class="cancel">Cancel</a>-->
+			</div>
+			<div class="success" style="display:none">
+				<div class="ico"></div>
+				<div class="txt"><span class="up-total">File</span> successfully uploaded!</div>
+			</div>
+			<div class="error" style="display:none">
+				<div class="ico"></div>
+				<div class="txt">Wrong file type!</div>
+			</div>
+		</div>
+		<div class="mid gr-mod-content contentable"></div>
+		<div class="bot"></div>
+	</div>
+		<div class="dly-notes">
+					<div class="day day-2014-01-06" style=" overflow: visible" data-date="2014-01-06" data-date-formatted="06.01.2014">
+				<a href="javascript:;" data-model="[{&quot;id&quot;:&quot;327&quot;,&quot;name&quot;:&quot;Koosolek&quot;,&quot;starts_at&quot;:&quot;06.01.2014&quot;,&quot;start_time&quot;:&quot;12:00&quot;,&quot;ends_at&quot;:&quot;06.01.2014&quot;,&quot;location&quot;:&quot;Kontor&quot;,&quot;description&quot;:&quot;Saame kokku ja ajame mulli.&quot;,&quot;starts_at_month&quot;:&quot;Jan&quot;,&quot;starts_at_day&quot;:&quot;06&quot;,&quot;starts_at_year&quot;:&quot;2014&quot;,&quot;ends_at_month&quot;:&quot;Jan&quot;,&quot;ends_at_day&quot;:&quot;06&quot;,&quot;ends_at_year&quot;:&quot;2014&quot;,&quot;multidate&quot;:false,&quot;singledate&quot;:true,&quot;coach_name&quot;:&quot;Silver Mikk&quot;,&quot;days&quot;:1}]" class="qtip-black hasnote pop-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=06.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-07" style=" overflow: visible" data-date="2014-01-07" data-date-formatted="07.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=07.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-08" style=" overflow: visible" data-date="2014-01-08" data-date-formatted="08.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=08.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-09" style=" overflow: visible" data-date="2014-01-09" data-date-formatted="09.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=09.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-10" style=" overflow: visible" data-date="2014-01-10" data-date-formatted="10.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=10.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-11" style=" overflow: visible" data-date="2014-01-11" data-date-formatted="11.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=11.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+					<div class="day day-2014-01-12" style=" overflow: visible" data-date="2014-01-12" data-date-formatted="12.01.2014">
+				<a href="javascript:;" data-model="[]" class="qtip-black modal-open event" data-target="event" oldtitle="Add event" title=""></a>
+				<a href="javascript:;" data-model="[]" class="qtip-black competition" data-target="comp" oldtitle="Coming soon!" title=""></a>
+				<a data-model="[]" href="?page=tests&amp;action=batteries&amp;date=12.01.2014" class="qtip-black test" data-target="test" oldtitle="Add test" title=""></a>
+			</div>
+				<div class="event-wrapper" style="display: none; position: absolute">
+			<form name="form" action="?page=workouts2&amp;action=saveEvent" style="margin: 8px 7px 4px" class="event-form">
+	<input type="hidden" name="id" ng-model="event.data.id">
+	<input type="hidden" name="___nonce" value="84848969_dab1cf64305d5bcb13fae43103a5940288f6e134">
+	<h2 class="">Event</h2>
+	<div class="clear1"></div>
+	<div class="f-row">
+		<input type="text" name="name" required="" placeholder="Event name" class="w330 required" style="font-weight: 700; font-size: 20px" ng-model="event.data.name">
+	</div>
+	<div class="f-row data" style="margin: 8px 0 8px 0">
+		<input type="text" required="" name="starts_at" class="date w-date" ng-model="event.data.starts_at" spl-date="">
+		<span class="ico ico-time" style="margin: 0 -2px -8px 10px; display: inline-block; float: none"></span>
+		<input type="text" name="start_time" class="w60 al-c u-time" placeholder="hh:mm" style="margin-right: 8px" title="Start time" ng-model="event.data.start_time">
+		<input type="number" min="1" max="200" name="days" title="Duration in days" ng-model="event.data.days" class="fv-days w50 al-r" style="margin-left: 10px; padding-right: 4px" value="1"><span class="field-mock">days</span>
+	</div>
+	<div class="f-row">
+		<label>Location <span style="color: gray">(optional)</span></label>
+		<input type="text" name="location" placeholder="Location" class="w330" ng-model="event.data.location">
+	</div>
+		<div class="f-row">
+		<label>Description <span style="color: gray">(optional)</span></label>
+		<textarea class="w330" name="description" ng-model="event.data.description"></textarea>
+	</div>
+	<div class="clear10"></div>
+	<div class="f-row f-actions">
+		<input type="hidden" name="delete" class="u-disabled" disabled="disabled" value="1">
+		<button type="button" data-loading="Deleting" class="button-link u-hidden ux-save-event delete fl-l" ng-show="event.data.id" ng-click="deleteModal()">Delete</button>
+		<button type="button" data-loading="Saving" class="button-pri ux-save-event" ng-click="saveModal()" ng-class="{ disabled: form.$invalid }" ng-disabled="form.$invalid">Save</button>
+		<button type="button" class="button-link close-extra fl-r" ng-click="cancelModal()">Cancel</button>
+	</div>
+	<div class="clear1"></div>
+</form>		</div>
+		<div class="event-pop">
+			<div class="popup-miniform tx-pop event-form" style="display: none;">
+	<div class="pointer-left"></div>
+	<div class="fg-event">
+		<div class="tx-divider"></div>
+		<a href="javascript:;" class="fl-r tx-edit modal-open ifn ifn-coach_name" data-target="event">Edit</a>
+		<h3 class="ft-name tx-name fl-l">Event</h3>
+				<div class="clear1"></div>
+		<ul class="tx-params">
+			<li class="tx-param if if-starts_at"><i class="ico ico-date"></i><span class="ft-starts_at">Event</span><span class="if if-days"> (<span class="ft-days">1</span> days)</span></li>
+			<li class="tx-param if if-start_time"><i class="ico ico-time"></i><span class="ft-start_time">Event</span></li>
+			<li class="tx-param if if-location"><i class="ico ico-place"></i><span class="ft-location">Event</span></li>
+						<li class="tx-param if if-coach_name"><i class="ico ico-user"></i>Coach <span class="ft-coach_name">Event</span></li>
+		</ul>
+		<div class="clear1"></div>
+		<p class="ft-description tx-description"></p>
+	</div>
+</div>
+		</div>
+		<div class="comp-wrapper" style="display: none; position: absolute">
+			<form name="form" action="?page=workouts2&amp;action=saveCompetition" style="margin: 8px 7px 4px" class="event-form">
+	<input type="hidden" name="id" ng-model="event.data.id">
+	<input type="hidden" name="___nonce" value="59514835_890b19bd6873b935b4705b04ee9172169d398c88">
+	<h2 class="">Competition</h2>
+	<div class="clear1"></div>
+	<div class="f-row">
+		<input type="text" name="name" required="" placeholder="Competition name" class="w330 required" style="font-weight: 700; font-size: 20px" ng-model="event.data.name">
+	</div>
+	<div class="f-row data" style="margin: 8px 0 8px 0">
+		<input type="text" required="" name="starts_at" class="date w-date" ng-model="event.data.starts_at" spl-date="">
+		<span class="ico ico-time" style="margin: 0 -2px -8px 10px; display: inline-block; float: none"></span>
+		<input type="text" name="start_time" class="w60 al-c u-time" placeholder="hh:mm" style="margin-right: 8px" title="Start time" ng-model="event.data.start_time">
+		<input type="number" min="1" max="200" name="days" title="Duration in days" ng-model="event.data.days" class="fv-days w50 al-r" style="margin-left: 10px; padding-right: 4px" value="1"><span class="field-mock">days</span>
+	</div>
+	<div class="f-row">
+		<label>Location <span style="color: gray">(optional)</span></label>
+		<input type="text" name="location" placeholder="Location" class="w330" ng-model="event.data.location">
+	</div>
+		<div class="f-row">
+		<label class="fl-r" style="width: 87px">Priority</label>
+		<label>Activity</label>
+		<input type="text" name="activity_name" placeholder="Activity" class="w238 u-activity" ng-model="event.data.activity_name">
+		<select name="priority" style="width: 87px" ng-model="event.data.priority">
+			<option value="1">A</option>
+			<option value="2">B</option>
+			<option value="3">C</option>
+			<option value="4">D</option>
+			
+		</select>
+	</div>
+		<div class="f-row">
+		<label>Description <span style="color: gray">(optional)</span></label>
+		<textarea class="w330" name="description" ng-model="event.data.description"></textarea>
+	</div>
+	<div class="clear10"></div>
+	<div class="f-row f-actions">
+		<input type="hidden" name="delete" class="u-disabled" disabled="disabled" value="1">
+		<button type="button" data-loading="Deleting" class="button-link u-hidden ux-save-event delete fl-l" ng-show="event.data.id" ng-click="deleteModal()">Delete</button>
+		<button type="button" data-loading="Saving" class="button-pri ux-save-event" ng-click="saveModal()" ng-class="{ disabled: form.$invalid }" ng-disabled="form.$invalid">Save</button>
+		<button type="button" class="button-link close-extra fl-r" ng-click="cancelModal()">Cancel</button>
+	</div>
+	<div class="clear1"></div>
+</form>		</div>	
+		<div class="comp-pop">
+			<div class="popup-miniform tx-pop event-form" style="display: none;">
+	<div class="pointer-left"></div>
+	<div class="fg-event">
+		<div class="tx-divider"></div>
+		<a href="javascript:;" class="fl-r tx-edit modal-open ifn ifn-coach_name" data-target="comp">Edit</a>
+		<h3 class="ft-name tx-name fl-l">Event</h3>
+		<div class="tx-priority ft-priority_char fl-l"></div>		<div class="clear1"></div>
+		<ul class="tx-params">
+			<li class="tx-param if if-starts_at"><i class="ico ico-date"></i><span class="ft-starts_at">Event</span><span class="if if-days"> (<span class="ft-days">1</span> days)</span></li>
+			<li class="tx-param if if-start_time"><i class="ico ico-time"></i><span class="ft-start_time">Event</span></li>
+			<li class="tx-param if if-location"><i class="ico ico-place"></i><span class="ft-location">Event</span></li>
+			<li class="tx-param if if-activity_name"><i class="ico ico-activity"></i><span class="ft-activity_name">Event</span></li>			<li class="tx-param if if-coach_name"><i class="ico ico-user"></i>Coach <span class="ft-coach_name">Event</span></li>
+		</ul>
+		<div class="clear1"></div>
+		<p class="ft-description tx-description"></p>
+	</div>
+</div>
+		</div>
+		
+		<div class="test-pop">
+			<div class="popup-miniform event-form tx-pop" style="display: none;">
+	<div class="pointer-left"></div>
+	<div class="fg-event" style="margin-bottom: 20px">
+		<div class="tx-divider"></div>
+		<input type="hidden" class="fv-id">
+		<a href="#" data-href="?page=tests&amp;action=results&amp;result=" class="fl-r tx-edit test-open" data-target="test">Edit</a>
+		<h3 class="ft-object_name tx-name fl-l">Event</h3>
+		<div class="clear1"></div>
+		<div class="tx-test-param fg-exercise" style="line-height: 20px">
+			<span class="ft-test_name" style="font-weight: 700">Event</span>
+			<span class="ft-params">Event</span>
+		</div>
+		<div class="clear1"></div>
+	</div>
+	
+</div>
+		</div>
+		
+	</div>
+	<script>
+		(function () {
+			var $notes = $('.dly-notes');
+var $body = $('body');
+var $pops = $notes.find('.popup-miniform');
+var saveCallback = null;
+var lastPopup = null;
+$notes.on('click', 'a.pop-open', function(e) {
+	e.preventDefault();
+	var $icon = $(this);
+	var $wrp = $notes.find('.'+$icon.data('target')+'-pop');
+	var $pop = $wrp.find('.popup-miniform');
+	$pops.hide();
+	//re-click on same icon, don't open the popdown again
+	if (lastPopup && lastPopup === $pop[0]) {
+		lastPopup = null;
+		return;
+	}
+	lastPopup = $pop[0];
+	var model = $icon.data('model');
+	$pop.css('top', $icon.position().top + 26);
+	$pop.css('left', $icon.position().left - 19);
+	if (model && model.length) {
+		$pop.find('.fg-event.not-first').remove();
+		$pop.find('.fg-event').fill(model);
+		$pop.find('.fg-exercise').each(function (i) {
+			$(this).fill(model[i].exercises);
+		});
+	}
+	$pop.show();
+});
+$notes.on('click', 'a.test-open', function () {
+	var $self = $(this);
+	$self.attr('href', $self.data('href')+$self.siblings('.fv-id').val());
+});
+
+function modalOpen() {
+	var $icon = $(this);
+	$pops.hide();
+	var $body = $('body');
+	var $wrp = $notes.find('.'+$icon.data('target')+'-wrapper');
+	$body.modal($wrp.html(), true);
+	var $popup = $body.children('.newPopup:visible');
+	$popup.find(':input').addWidgets();
+	var model = $icon.closest('.fm-model').data('model');
+	if (model && model.id) {
+		$popup.fill(model);
+		$popup.find('.delete').show();
+	} else
+		$popup.find('.date').val($icon.closest('.day').data('date-formatted') || spl.user.today);
+	
+	$popup.find('.close-popup').hide();
+	$popup.find('.close-extra').click(function(e) {
+		$popup.find('.close-popup').click();
+	});
+	$popup.find('.ux-save-event').click(function(e) {
+		var $btn = $(this);
+		if ($btn.hasClass('disabled'))
+			return false;
+		if ($btn.hasClass('delete')) {
+			if (!confirm('Are you sure?')) return false;
+			$btn.siblings('[name="delete"]').prop('disabled', false);
+		}
+		$btn.addClass('disabled').text($btn.data('loading'));
+		var $form = $popup.find('form');
+		$.post($form.attr('action'), $form.serialize(), function(data) {
+			$popup.find('.close-popup').click();
+			if (saveCallback) saveCallback(data);
+			else spl.graph.reload(null, function() { /* TODO open overview popup here? */ });
+		});
+	});
+}
+
+$notes.on('click', 'a.modal-open', function(e) {
+	e.preventDefault();
+	modalOpen.call(this);
+});
+
+$(document).on('click', '.day .action.modal-open', function (e) {
+	e.preventDefault();
+	modalOpen.call(this);
+});
+
+$(document).on('click', function(e) {
+	var $target = $(e.target);
+	var $inside_popup = $target.closest('.popup-miniform').length > 0;
+	if ($target.closest('.pop-open').length === 0 && !$inside_popup) {
+		$pops.hide();
+	}
+	e.stopPropagation();
+});
+
+$(document).on('keyup', function(e) {
+	if (e.which !== 27)
+		return false;
+	var $modal = $('body').children('.newPopup:visible');
+	if ($body.children('.datepicker').filter(':visible').length > 0) {
+		$body.children('.datepicker').hide();
+
+//	} else if ($modal.length > 0) {
+//		$modal.find('.close-popup').click();
+	} else if ($modal.length === 0 && $pops.filter(':visible').length > 0) {
+		$pops.hide();
+	}
+});		})();
+	</script>
+	<!-- WEEKS GRAPH -->
+	<div id="wk-graph" class="wk-graph" style="position: relative">
+		<div class="gr-ldr" style="display: none; z-index: 200">
+			<div class="ldr-top"></div>
+			<div class="ldr-mid">
+				<img src="gfx/loader_calculating.gif" alt="">
+				<div class="txt">Calculating new plan...</div>
+			</div>
+			<div class="ldr-bot"></div>
+		</div>
+		<!-- POPUP -->
+		<div class="gr-pop gr-pop-up" style="position: absolute; display: none;">
+			<div class="top"><a href="javascript:;" class="cls-pp gr-pop-close">Close</a></div>
+			<div class="mid gr-pop-content contentable"></div>
+			<div class="mid del" style="display: none">
+				<h3>What to delete?</h3>
+				<div class="clear20"></div>
+				<label><input value="this" name="delete" type="radio" style="margin-top: -5px" checked="checked"><span class="txt">Only this workout</span></label>
+				<div class="clear10"></div>
+				<label><input value="following" name="delete" type="radio" style="margin-top: -5px"><span class="txt">This and all following workouts in the series</span></label>
+				<div class="clear10"></div>
+				<label><input value="all" name="delete" type="radio" style="margin-top: -5px"><span class="txt">All workouts in the series</span></label>
+				<div class="clear30"></div>
+				<div class="actions">
+					<a class="button-pri gr-pop-delete2" style="cursor: pointer">Delete</a>
+				</div>
+			</div>
+			<div class="bot"></div>
+		</div>
+		<!-- //POPUP -->
+		<!-- POPDOWN -->
+		<div class="gr-pop gr-pop-down gr-pop-advanced" style="position: absolute; top: 57px; display: none;">
+			<div class="top"><a href="javascript:;" class="cls-pp gr-pop-close">Close</a></div>
+			<div class="mid gr-pop-content contentable"><form class="ajaxform form" action="?page=workouts2&amp;action=save&amp;yearweek=201401&amp;confirm=81772691_729868e4673aae7a497ed683c7301e436196b7d3&amp;workout=new&amp;date=">
+<div class="w-adv">
+	<h3 class="fl-l">Add workout</h3>
+	<input type="text" name="wdate" class="wuserdate date w-date fl-l" value="">
+	<div class="data" style="display: inline-block; float: right; margin-top: -5px; margin-right: 5px">
+		<div class="ico ico-time fl-l" style="margin-top: 3px"></div>
+		<div class="field fl-l"><input title="Start time" name="wtime" type="text" class="txt w50 u-time u-autocompleter w-time" value=""></div>
+	</div>
+</div>
+<div class="clear1"></div>
+<div class="wo">
+	<input type="hidden" class="wid" name="wid" value="new">
+	<input type="hidden" class="wdate" value="">
+	<input type="hidden" class="pid" value="">
+
+	<input type="hidden" class="hasdistance" value="1">
+	<input type="hidden" class="advanced-view" value="1">
+	<input type="hidden" class="period" name="period_id" value="">
+	<input type="hidden" class="coach_id" value="">
+	<input type="hidden" class="clubgroup" name="clubgrouptag_id" value="">
+	<div class="wo-head">
+		<label>Activity</label><br>
+					<div><input type="text" class="txt-big w238 w-activity-name" value="" name="activity_name" id="w_activity_name_new"><div class="ico"></div> <div class="loader" style="display:none"></div></div>
+			<input id="w_activity_id_new" name="activity_id" value="" type="hidden"><br>
+												<div class="quickpick">
+								<a href="javascript:;" style="max-width:70px" onclick="pickActivityEx('197','Gym',this, false);" title="Gym">Gym</a>
+								<a href="javascript:;" style="max-width:70px" onclick="pickActivityEx('209','Core training',this, false);" title="Core training">Core traini..</a>
+								<a href="javascript:;" style="max-width:70px" onclick="pickActivityEx('1','Running',this, true);" title="Running">Running</a>
+							</div>
+							<br>
+	</div>
+	<div class="wo-head">
+		<label>Duration</label><br>
+		<input type="text" class="txt-big w80 w-duration u-autocompleter u-duration" value="" name="duration"><br>
+		
+	</div>
+	<div class="clear7"></div>
+	<div class="wo-head">
+		<label>Place or Route</label><br>
+		<input type="text" class="txt w180 w-route-name" value="" name="route_name" id="w_route_name_new">
+		<input type="hidden" name="route_id" value="" id="w_route_id_new">
+		<a href="javascript:;" style="margin-top: 1px;font-size: 13px;padding: 2px 8px;" class="button-sec btn-map fl-l" onclick="openWMaps('new','67885216_e9acfb6cbc9090ba28e3630afe8197d750640c3f',$('#w_route_id_new').val(),$('#w_route_laps_new').val(),$('#w_route_distance_new').val(),$('#w_route_name_new').val());"><span class="ico"></span>Map</a><br>
+								<div class="quickpick">
+						<a href="javascript:;" style="max-width:210px" onclick="pickRouteEx('','Tartu Sport','0','0',this);" title="Tartu Sport">Tartu Sport</a>
+					</div>
+			</div>
+	<div class="wo-head distance-sport" style="position: relative">
+		<label>Distance</label><br>
+		<input type="text" class="txt w50 u-autocompleter u-distance" id="w_route_distance_new" name="distance" value="" style="padding-right:30px;"><div style="top: 30px; right: 12px; position: absolute">km</div>
+		
+	</div>
+</div>
+
+<div class="feedback">
+	
+	<label class="blur">How hard was your workout?</label>
+<a href="javascript:;" class="adv blur">Advanced view</a>	<div class="clear10"></div>
+	<div class="slider slider-mini-int">
+		<input type="hidden" class="slidervalue" name="intensity" value="">
+		<div class="lbl-d lbl-1">Very light</div><div class="lbl-u lbl-2">Fairly light</div>
+		<div class="lbl-d lbl-3">Moderate</div><div class="lbl-u lbl-4">Somewhat hard</div>
+		<div class="lbl-d lbl-5">Hard</div><div class="lbl-u lbl-7">Very hard</div>
+		<div class="lbl-d lbl-8">Very-very hard</div><div class="lbl-u lbl-10">Maximal</div>
+		<div class="track"><div class="sldr-prg" style="width: 0"></div><div class="handler"></div></div>
+	</div>
+	<ul class="slider-scale"><li class="first">0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li class="last">10</li></ul>
+		<div class="blur w-adv">
+		<div class="cl clear10"></div>
+		<div class="wo js-wo">
+			<div class="wo-head"><label>Avg HR</label><br><input type="text" class="txt w60" name="hr_avg" value=""></div>
+			<div class="wo-head"><label>Max HR</label><br><input type="text" class="txt w60" name="hr_max" value=""></div>
+			<div class="wo-head"><label>Avg Cad</label><br><input type="text" class="txt w60" name="cad_avg" value=""></div>
+			<div class="wo-head"><label>Kcal</label><br><input type="text" class="txt w60" name="calories" value=""></div>
+			<div class="clear7"></div>
+			<div class="ux-custom-zones">
+				<input type="hidden" name="zone_bundle_id" value="">
+				<div class="wo-head zn-default"><label>Zone0</label><br><input type="text" class="txt w60" name="z0" value=""></div>
+				<div class="wo-head zn-default"><label>Zone1</label><br><input type="text" class="txt w60" name="z1" value=""></div>
+				<div class="wo-head zn-default"><label>Zone2</label><br><input type="text" class="txt w60" name="z2" value=""></div>
+				<div class="wo-head zn-default"><label>Zone3</label><br><input type="text" class="txt w60" name="z3" value=""></div>
+							</div>
+		</div>
+	</div>
+		<div class="clear1"></div>
+</div>
+<hr class="clear1 w-adv">
+	
+<div class="friends addional-wtime">
+	<div class="data">
+		<div class="ico ico-time"></div>
+		<div class="field"><input title="Start time" name="wtime" type="text" class="txt w50 u-time u-autocompleter w-time" value=""></div>
+	</div>
+<!--	<div class="clear10"></div>-->
+</div>
+<textarea style="width:324px;" title="Notes and comments" placeholder="Notes and comments" class="comm" name="comment"></textarea><div class="clear1"></div>
+
+<div class="actions">
+				<a href="javascript:;" class="button-pri gr-pop-submit">Save</a>
+		<a href="javascript:;" class="button-link fl-r gr-pop-close">Cancel</a>	</div>
+
+</form></div>
+			<div class="bot"></div>
+		</div>
+		<!-- //POPDOWN -->
+		<div class="inner">
+									<div class="over-msg settings-overlay" style="display:none">
+	<div class="planner-settings" style="margin-top:20px;">
+				<div style="text-align:center"><a href="https://beta.sportlyzer.com/?page=goals" class="button-sec fl-n">Edit your planner goals</a></div>
+				<div class="clear10"></div>
+		<a href="javascript:;" class="item" style="color: black">
+			<div class="settings-status iphone_switch"><div class="iphone_switch_container" style="height:24px; width:57px; position: relative; overflow: hidden"><img class="iphone_switch" style="height:24px; width:57px; background-image:url(gfx/bg_switch.png); background-repeat:none; background-position:0px" src="gfx/btn_switch.png"></div></div>
+			<input type="hidden" class="field check-status" data-value="1" name="planner" value="1">
+			<div class="txt">Training Planner For Endurance Sports (BETA for recreational level).</div>
+		</a>
+
+				<div class="item">
+			<div class="settings-status iphone_switch"><div class="iphone_switch_container" style="height:24px; width:57px; position: relative; overflow: hidden"><img class="iphone_switch" style="height:24px; width:57px; background-image:url(gfx/bg_switch.png); background-repeat:none; background-position:-33px" src="gfx/btn_switch.png"></div></div>
+			<input type="hidden" class="field check-status" data-value="0" name="planner_dyn" value="0">
+			<div class="txt">Dynamic planner - recalculates future workouts after each workout entry.</div>
+		</div>
+		
+		<div class="item">
+			<div class="exp-status iphone_switch"><div class="iphone_switch_container" style="height:24px; width:57px; position: relative; overflow: hidden"><img class="iphone_switch" style="height:24px; width:57px; background-image:url(gfx/bg_switch.png); background-repeat:none; background-position:-33px" src="gfx/btn_switch.png"></div></div>
+			<input type="checkbox" class="check-exp field" style="display:none;" data-value="0" name="experience" value="0">
+			<div class="txt">Display exact HR ranges in training instructions (instead of Zones).</div>
+		</div>
+		<div class="clear1"></div>
+
+		
+		<div id="planner-restdays" class="resting-days">
+	<div class="txt">From this week forward I don't want to train on:</div>
+	<div class="days">
+		<ul>
+			<li><a href="javascript:;" class="first">Mon</a><input class="field" type="hidden" name="mon" value="0"></li>
+			<li><a href="javascript:;">Tue</a><input class="field" type="hidden" name="tue" value="0"></li>
+			<li><a href="javascript:;">Wed</a><input class="field" type="hidden" name="wed" value="0"></li>
+			<li><a href="javascript:;">Thu</a><input class="field" type="hidden" name="thu" value="0"></li>
+			<li><a href="javascript:;">Fri</a><input class="field" type="hidden" name="fri" value="0"></li>
+			<li><a href="javascript:;">Sat</a><input class="field" type="hidden" name="sat" value="0"></li>
+			<li><a href="javascript:;" class="last">Sun</a><input class="field" type="hidden" name="sun" value="0"></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+	$('#planner-restdays .days a').click(function() {
+		var chkd = $(this).siblings('input').val() === '1';
+		if(chkd) {
+			$(this).removeClass('act').siblings('input').val('0');
+		} else {
+			$(this).addClass('act').siblings('input').val('1');
+		}
+		return false;
+	});
+</script>		<div class="clear1"></div>
+	</div>
+	<div class="cont">
+		
+
+		<div class="actions planner">
+			<a href="javascript:;" onclick="spl.graph.settings.close();" class="button-link fl-l" id="goal-close">Cancel</a>
+			<a href="javascript:;" onclick="spl.graph.settings.save(this);" class="button-pri b-save">Save</a>
+		</div>
+	</div>
+</div>			<div class="nav-btn nav-l u-nav u-nav-l" style="">
+				<a href="javascript:;" data-yearweek="201352" class="btn u-nav-btn"><i class="bck">Previous week</i></a>
+				<div class="packed" style="display: none;">
+					<div class="sep u-cal"></div>
+					<a href="javascript:;" class="btn u-cal" onclick="spl.graph.pickdate(this)" title="Jump to"><i class="cal">Jump to</i></a>
+					<div class="sep u-bck-tdy" style="display: none;"></div>
+					<a href="javascript:;" class="btn u-bck-tdy" onclick="spl.graph.today()" title="Back to today" style="display: none;"><i class="bck-tdy-l">Back to today</i></a>
+				</div>
+			</div>
+			<div class="wk">
+				<div class="mnth-name" style="z-index: 1; opacity: 0.6">January 2014</div>
+				
+									<div class="day monday tense-past" data-date="2014-01-06" data-date-formatted="06.01.2014">
+						<div class="name">Mon 6</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+													<a href="javascript:;" class="action daily" style="display: none;" title="Add daily info">Add daily info</a>							<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-06')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=06.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																																									<div data-wid="" data-intensity="" data-activity_id="1" class="column col-plan first anim-complete" style="height: 56.25px; bottom: 0px; z-index: 10;" title="Suggested training">
+				<div class="dur">0:30</div>												<div class="ico ico-running  ico-blck"></div>
+								<div class="popup" style="display: none">
+			<form>
+<h3 title="Running">Running, 0:30</h3>
+<input type="hidden" class="wid" value="new">
+<input type="hidden" name="activity_name" class="f-activity_name w-activity-name" value="Running">
+<input type="hidden" name="activity_id" class="f-activity_id" value="1">
+<input type="hidden" name="duration" class="f-duration u-duration" value="0:30">
+<input type="hidden" name="distance" class="f-duration u-distance" value="">
+<input type="hidden" class="wdate" value="2014-01-06">
+<input type="hidden" class="period" name="period_id" value="">
+<input type="hidden" name="route_id" value="">
+<input type="hidden" name="route_name" value="">
+<input type="hidden" name="coach_id" value="" class="coach_id">
+<input type="hidden" name="repeating" value="0">
+	<div class="clear10"></div>
+	<div class="wo">
+		<div class="advice">Train for 30 minutes in <a class="zone-link" href="javascript:;">Zone&nbsp;1</a>. Warm yourself up with <a href="https://beta.sportlyzer.com/pdf/dynamic_module.pdf" target="_blank">dynamic stretches</a> and cool down with <a href="https://beta.sportlyzer.com/pdf/static_module.pdf" target="_blank">static stretches</a>, but do not include them into your training time.<span class="advice-type" style="display:none">E1</span> <span style="color: darkred">(C3:E1)</span></div>
+	</div>
+
+	<div style="font-size: 12px; color: #999; margin: 10px 14px 0 0; line-height: 16px">Planned by: Sportlyzer</div>
+<div class="actions">
+		<a href="javascript:;" class="button-pri gr-pop-edit mark-as-done">Mark as Done</a>
+</div>
+</form>		</div>
+	</div>
+																
+										
+																																			<div data-wid="585709" data-intensity="6" data-activity_id="197" class="column col-done first anim-complete" style="height: 131.175px; bottom: 0px; z-index: 10;" title="Gym, 1:10">
+				<div class="dur">1:10</div>												<div class="ico ico-gym  ico-wht"></div>
+								<div class="popup" style="display: none">
+			<form>
+<h3 title="Gym">Gym, 1:10</h3>
+<input type="hidden" class="wid" value="585709">
+<input type="hidden" name="activity_name" class="f-activity_name w-activity-name" value="Gym">
+<input type="hidden" name="activity_id" class="f-activity_id" value="197">
+<input type="hidden" name="duration" class="f-duration u-duration" value="1:10">
+<input type="hidden" name="distance" class="f-duration u-distance" value="">
+<input type="hidden" class="wdate" value="2014-01-06">
+<input type="hidden" class="period" name="period_id" value="">
+<input type="hidden" name="route_id" value="">
+<input type="hidden" name="route_name" value="Tartu Sport">
+<input type="hidden" name="coach_id" value="" class="coach_id">
+<input type="hidden" name="repeating" value="0">
+<div class="clear10"></div>
+<div class="wo">
+		<div class="data">
+		<div class="ico ico-time"></div>
+		<div class="value">19:15</div>
+	</div>
+			<div class="data">
+		<div class="ico ico-place"></div>
+		<div class="value">Tartu Sport</div>
+	</div>
+		</div>
+<hr class="clear1">
+	<div style="float: right; margin-right: 10px">
+	<div class="pie-wrap qtip-htmlok fl-r" style="width: 55px;height:55px; margin-top: 0px" title="Zone distribution: &lt;br /&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C1F08E;' class=&quot;czzb czz-0b&quot;&gt;&lt;/i&gt;Zone 0&lt;/td&gt;&lt;td&gt;0%&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #69B300;' class=&quot;czzb czz-1b&quot;&gt;&lt;/i&gt;Zone 1&lt;/td&gt;&lt;td&gt;16%&lt;/td&gt;&lt;td&gt;0:11&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #FFA300;' class=&quot;czzb czz-2b&quot;&gt;&lt;/i&gt;Zone 2&lt;/td&gt;&lt;td&gt;76%&lt;/td&gt;&lt;td&gt;0:53&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C93535;' class=&quot;czzb czz-3b&quot;&gt;&lt;/i&gt;Zone 3&lt;/td&gt;&lt;td&gt;9%&lt;/td&gt;&lt;td&gt;0:06&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;">
+	<div class="overview-pie" values="0,11,53,6" data-colors="#C1F08E,#69B300,#FFA300,#C93535"></div>
+</div>
+<style>
+	.czzb { display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; }
+.czz-1b { background: #C1F08E }
+.czz-2b { background: #69B300 }
+.czz-3b { background: #FFA300 }
+.czz-4b { background: #C93535 }
+</style>	
+	<a href="javascript:;" onclick="spl.show.zoneInfo();" style="display: block; font-size: 12px; margin-top: 4px; margin-bottom: 12px">My zones</a>
+</div>
+<div class="wo-res">
+		<div class="data">
+		<div class="ico ico-hr"></div>
+		<div class="value">avg 156 bpm</div>
+	</div>
+			
+
+</div>
+
+<div class="clear3"></div>
+<div class="actions">
+	<a data-wid="585709" href="javascript:;" class="fl-r gr-pop-edit" style="">Edit</a>	<a href="javascript:;" class="fl-l gr-pop-delete">Delete</a>	<div style="" class="fl-l"><a target="_blank" href="https://beta.sportlyzer.com/?page=detailed&amp;id=585709" class="gr-pop-details" data-text-waiting="Collecting data..." style="margin-left: 88px">Details</a></div></div>
+</form>		</div>
+	</div>
+																					</div>
+									<div class="day tense-past" data-date="2014-01-07" data-date-formatted="07.01.2014">
+						<div class="name">Tue 7</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+													<a href="javascript:;" class="action daily" style="display: none;" title="Add daily info">Add daily info</a>							<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-07')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=07.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																				
+										
+																									</div>
+									<div class="day tense-past" data-date="2014-01-08" data-date-formatted="08.01.2014">
+						<div class="name">Wed 8</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+													<a href="javascript:;" class="action daily" style="display: none;" title="Add daily info">Add daily info</a>							<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-08')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=08.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																				
+										
+																									</div>
+									<div class="day tense-present" data-date="2014-01-09" data-date-formatted="09.01.2014">
+						<div class="name" style="color: #A59E90">TODAY</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+													<a href="javascript:;" class="action daily" style="display: none;" title="Add daily info">Add daily info</a>							<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-09')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=09.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																				
+										
+																									</div>
+									<div class="day tense-future" data-date="2014-01-10" data-date-formatted="10.01.2014">
+						<div class="name">Fri 10</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+																				<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-10')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=10.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																				
+										
+																									</div>
+									<div class="day tense-future" data-date="2014-01-11" data-date-formatted="11.01.2014">
+						<div class="name">Sat 11</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+																				<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-11')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=11.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																																									<div data-wid="" data-intensity="" data-period="104564" data-activity_id="1" class="column col-plan first anim-complete" style="height: 225px; bottom: 0px; z-index: 10;" title="Running, 2:00, 10km">
+				<div class="dur">2:00</div>		<div class="plan-lbl">Goal</div>											<div class="ico ico-comp-wht"></div>
+								<div class="popup" style="display: none">
+			<form>
+<h3 title="Running">Running, 2:00</h3>
+<input type="hidden" class="wid" value="new">
+<input type="hidden" name="activity_name" class="f-activity_name w-activity-name" value="Running">
+<input type="hidden" name="activity_id" class="f-activity_id" value="1">
+<input type="hidden" name="duration" class="f-duration u-duration" value="2:00">
+<input type="hidden" name="distance" class="f-duration u-distance" value="10">
+<input type="hidden" class="wdate" value="2014-01-11">
+<input type="hidden" class="period" name="period_id" value="104564">
+<input type="hidden" name="route_id" value="">
+<input type="hidden" name="route_name" value="pkdojow">
+<input type="hidden" name="coach_id" value="" class="coach_id">
+<input type="hidden" name="repeating" value="0">
+<div class="clear10"></div>
+<div class="wo">
+			<div class="data">
+		<div class="ico ico-place"></div>
+		<div class="value">pkdojow</div>
+	</div>
+			<div class="data">
+		<div class="ico ico-length"></div>
+		<div class="value">10 km</div>
+	</div>
+	</div>
+
+<div class="clear3"></div>
+<div class="actions">
+	<a data-wid="" href="javascript:;" class="fl-r gr-pop-edit" style="">Edit</a>	<a href="javascript:;" class="fl-l gr-pop-delete">Delete</a>	</div>
+</form>		</div>
+	</div>
+																
+										
+																									</div>
+									<div class="day tense-future" data-date="2014-01-12" data-date-formatted="12.01.2014">
+						<div class="name">Sun 12</div>
+						<a href="javascript:;" class="action workout" data-type="workout" style="display: none;" title="Add workout">Add workout</a>
+																				<a href="javascript:;" class="action comment" style="display: none;" title="Add comment">Add comment</a>
+							<a href="javascript:;" class="action health" style="display: none; left: -15px; top: -15px;" onclick="spl.graph.healthproblems.open('2014-01-12')" title="Add health problems">Add health problems</a>
+														<a href="javascript:;" class="action competition modal-open" data-model="[]" data-target="comp" style="display: none; top: 23px; left: 66px;" title="Add competition">Add competition</a>
+														<a href="?page=tests&amp;action=batteries&amp;date=12.01.2014" class="action test" data-type="test" style="display: none; top: 57px; left: 42px;" title="Add test">Add test</a>
+							<a href="javascript:;" class="action event modal-open" data-model="[]" data-target="event" style="display: none; top: 57px; left: -4px;" title="Add event">Add event</a>
+						
+					<a href="javascript:;" data-wo_type="workout" class="add flower-opener">Add</a>
+					
+																				
+										
+																									</div>
+								<div class="clear1"></div>
+
+			</div>
+			<div class="nav-btn nav-r u-nav u-nav-r" style="">
+				<div class="packed" style="display: none;">
+					<a href="javascript:;" class="btn u-bck-tdy" onclick="spl.graph.today()" title="Back to today"><i class="bck-tdy-r">Back to today</i></a>
+					<div class="sep u-bck-tdy"></div>
+					<a href="javascript:;" class="btn u-cal" onclick="spl.graph.pickdate(this)" title="Jump to"><i class="cal">Jump to</i></a>
+					<div class="sep u-cal"></div>
+				</div>
+				<a href="javascript:;" data-yearweek="201402" class="btn u-nav-btn"><i class="fwd">Next week</i></a>
+			</div>
+		</div>
+	</div>
+		<script>
+		function SPLCustomZones(zones) {
+			this.getZonesByDate = function(date) {
+				if (!zones) return [];
+				var last;
+				for (var i in zones) {
+					if (i > date) {
+						if (zones[last] && zones[last][0] && zones[last][0].until < date)
+							return [];
+						return zones[last];
+					}
+					last = i;
+				}
+				if (zones[i] && zones[i][0] && zones[i][0].until < date)
+					return [];
+				return zones[i];
+			};
+		}
+		var params = {
+			selector:	".wk-graph:first",
+			chronology: {"today":"2014-01-09","current":"201401","selected":"201401","monday":"2014-01-06","sunday":"2014-01-12","next":"201402","previous":"201352"},
+			endpoint:	'',
+			zones: new SPLCustomZones([])
+		}
+		spl.graph = new spl.Graph(params);
+		$(document).offon("click", '.zone-link', function () {
+			spl.show.zoneInfo($(this).html().substr($(this).html().length-2));
+		});
+	</script>
+	<!-- //WEEKS GRAPH -->
+		<div class="dly-notes">
+							<div data-date="2014-01-06" class="day">
+					<a href="javascript:;" class="daily qtip-black hasnote" onclick="openHealthinfoEx('2014-01-06', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-06');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-06')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-07" class="day">
+					<a href="javascript:;" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-07', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-07');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-07')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-08" class="day">
+					<a href="javascript:;" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-08', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-08');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-08')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-09" class="day">
+					<a href="javascript:;" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-09', spl.request.nonce, null)" oldtitle="Add daily info" title="" aria-describedby="ui-tooltip-32"></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-09');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-09')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-10" class="day">
+					<a href="javascript:;" style="visibility: hidden" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-10', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-10');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-10')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-11" class="day">
+					<a href="javascript:;" style="visibility: hidden" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-11', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-11');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-11')" oldtitle="Add health problems" title=""></a>
+				</div>
+							<div data-date="2014-01-12" class="day">
+					<a href="javascript:;" style="visibility: hidden" class="daily qtip-black" onclick="openHealthinfoEx('2014-01-12', spl.request.nonce, null)" oldtitle="Add daily info" title=""></a>
+					<a href="javascript:;" class="comment qtip-black" onclick="spl.graph.daynote.open('2014-01-12');" oldtitle="Add comment" title=""></a>
+					<a href="javascript:;" class="health qtip-black" onclick="spl.graph.healthproblems.open('2014-01-12')" oldtitle="Add health problems" title=""></a>
+				</div>
+					</div>
+		<!-- WEEKLY PROGRESS GRAPH -->
+						<div style="float: left">
+						<div class="pie-wrap qtip-htmlok" style="width: 55px; margin-top: 26px; margin-left: 10px; float: left" oldtitle="Zone distribution: &lt;br /&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C1F08E;' class=&quot;czzb czz-0b&quot;&gt;&lt;/i&gt;Zone 0&lt;/td&gt;&lt;td&gt;0%&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #69B300;' class=&quot;czzb czz-1b&quot;&gt;&lt;/i&gt;Zone 1&lt;/td&gt;&lt;td&gt;16%&lt;/td&gt;&lt;td&gt;0:11&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #FFA300;' class=&quot;czzb czz-2b&quot;&gt;&lt;/i&gt;Zone 2&lt;/td&gt;&lt;td&gt;76%&lt;/td&gt;&lt;td&gt;0:53&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;i style='display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C93535;' class=&quot;czzb czz-3b&quot;&gt;&lt;/i&gt;Zone 3&lt;/td&gt;&lt;td&gt;9%&lt;/td&gt;&lt;td&gt;0:06&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" title="">
+	<div class="summary-pie" values=",11,53,6" data-colors="#C1F08E,#69B300,#FFA300,#C93535"><canvas width="55" height="55" style="display: inline-block; width: 55px; height: 55px; vertical-align: top;"></canvas></div>
+</div>
+<script>
+	(function () {
+		var $pie = $('.summary-pie').pie({ size: 55 });
+		showDarkQtip($pie.parent());
+	})();
+</script>
+<style>
+	.czzb { display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; }
+.czz-1b { background: #C1F08E }
+.czz-2b { background: #69B300 }
+.czz-3b { background: #FFA300 }
+.czz-4b { background: #C93535 }
+</style>			
+			<a href="javascript:;" onclick="spl.show.zoneInfo()" style="display: block; font-size: 12px; margin: 0 0 0 -5px; text-align: right">My zones</a>
+		</div>
+				<div class="wkprogr" style="padding-left: 76px;">
+						<div class="bar">
+				<div class="inner" style="background-position: 527px -24px">
+					
+					<div class="done" style="width:247px">
+						<div class="beg"></div>
+												<div class="end">
+							<div class="value" title="Done duration">1:10</div>
+						</div>
+											</div>
+																<div class="total" title="Target duration">2:30</div>
+									</div>
+					<div class="title">Your weekly recommended workout load. </div>
+			</div>
+		</div>
+				<table class="weekly-summary">
+					<tbody>
+																								<tr>							<td>Gym</td>
+							<td>								<div class="pie" style="margin: 1px 0 0 3px" values=",11,53,6"><canvas width="22" height="22" style="display: inline-block; width: 22px; height: 22px; vertical-align: top;"></canvas></div></td>
+							<td class="pbarw" style="width: 240px;" data-planned="" data-done="4200">
+								<div style="position: relative">
+																		<div class="pbar-popup" style="width: 360px">
+																				<div class="legend2" style="width: 240px"><table><tbody><tr><td><i style="display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C1F08E;" class="czzb czz-0b"></i>Zone 0</td><td>0%</td><td></td></tr><tr><td><i style="display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #69B300;" class="czzb czz-1b"></i>Zone 1</td><td>0%</td><td>0:11</td></tr><tr><td><i style="display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #FFA300;" class="czzb czz-2b"></i>Zone 2</td><td>0%</td><td>0:53</td></tr><tr><td><i style="display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; background-color: #C93535;" class="czzb czz-3b"></i>Zone 3</td><td>0%</td><td>0:06</td></tr></tbody></table></div>
+										<div class="pie-big" values=",11,53,6" data-colors="#C1F08E,#69B300,#FFA300,#C93535" title=""><canvas width="85" height="85" style="display: inline-block; width: 85px; height: 85px; vertical-align: top;"></canvas></div>
+										<div class="clear15"></div>
+										<div class="line"></div>
+										<div class="clear10"></div>
+										
+										<table class="popup-table" style="width: 100%">
+											<tbody><tr>
+												<td>Done</td>
+												<td style="width: 60px">1:10</td>
+												<td style="width: 85px">-</td>
+											</tr>
+																					</tbody></table>
+										
+										
+									</div>
+																	</div>
+								<div class="pbar"><div class="progress" style="width: 360px;"></div></div>
+							</td>
+							
+
+							<td class="percent"><span style="float: right; margin-right: -11px; margin-top: 4px">/</span><div>1:10</div></td>
+							<td class="percent" style="padding-left: 12px"><div>0:00</div></td>
+
+						</tr>
+												<tr>							<td>Running</td>
+							<td>								<div class="pie" style="margin: 1px 0 0 3px" values=",,,"><canvas width="22" height="22" style="display: inline-block; width: 22px; height: 22px; vertical-align: top;"></canvas></div></td>
+							<td class="pbarw" style="width: 240px;" data-planned="9000" data-done="">
+								<div style="position: relative">
+																	</div>
+								<div class="pbar"><div class="progress" style="width: 0px;"></div></div>
+							</td>
+							
+
+							<td class="percent"><span style="float: right; margin-right: -11px; margin-top: 4px">/</span><div>0:00</div></td>
+							<td class="percent" style="padding-left: 12px"><div>2:30</div></td>
+
+						</tr>
+											</tbody>
+				</table>
+				<script type="text/javascript">
+					$('.weekly-summary')
+						.find('.pbarw').each(function () {
+							var w = $(this).width();
+							var planned = $(this).data('planned');
+							if (planned) {
+								var p = Math.min(1, toInt($(this).data('done'), 0) / toInt(planned,1));
+								$(this).find('.progress').width(p*w);
+//								$(this).siblings('.percent').children('div').text(Math.round(p*100)+'%');
+							} else {
+								$(this).find('.progress').width(w);
+							}
+
+						})
+						.on('mouseover', '.zones-split', function () {
+							$(this).siblings()
+								.first().css('margin-top', '-20px').show().end()
+								.last().css('margin-bottom', '-22px').show();
+						})
+						.on('mouseout', '.zones-split', function () {
+							$(this).siblings().hide();
+						});
+						$('.pie-overall').pie({ size: 40, qtip: true });
+						$('.pie-big').pie({ size: 85, qtip: true });
+						$('.pie').pie({ size: 22 });							
+				</script>
+				<style>
+					.dot { right: -1px; top: 3px; position: absolute; border-radius: 1px; background: #cd0101; width: 1px; height: 5px; opacity: 0.7; }
+					.pbar-popup { text-align: left; width: 300px; margin-left: -150px; position: absolute; left: 50%; bottom: 100%; margin-bottom: 17px; z-index: 200; display: none; border-radius: 4px; background: white; border: 1px solid #ccc; padding: 15px; }
+					.pbar-popup .line { border-top: 1px solid #EBE5DB; }
+					.pbar-popup .pie-big { margin-top: 2px; }
+					.pbar-popup .legend2 { float: right; width: 100px; line-height: 16px; font-size: 13px; }
+					.pbar-popup .legend2 .zb { margin-right: 5px; }
+					.pbar-popup .legend2 table td { padding-top: 2px; padding-bottom: 2px; }
+					.weekly-summary { width: 92%; margin: 0 4% 0 4%; font-size: 14px; float: right; color: #000; }
+					.weekly-summary .bar { font-weight: normal; width: 250px; padding-right: 0 }
+					.weekly-summary tbody td { color: #777; padding-top: 7px; padding-bottom: 7px; vertical-align: middle; text-align: right; padding-right: 10px; }
+					.weekly-summary tbody td:first-child { text-align: left; }
+					.weekly-summary tr:hover td { color: #000; }
+					.weekly-summary tr:hover td .pbar-popup { display: block; }
+
+					.weekly-summary .percent {
+						padding-right: 0;
+						width: 45px;
+					}
+					.weekly-summary .percent div {
+						/*border: 1px solid #EBE5DB;*/
+						border-radius: 3px;
+						padding: 4px 3px;
+						font-size: 14px;
+						/*font-weight: bold;*/
+						text-align: center;
+						float: right;
+						/*width: 41px;*/
+
+					}
+					.weekly-summary .pbar {
+						background: #EBE5DB;
+						border-radius: 5px;
+					}
+					.weekly-summary tr:hover .progress {
+						background: #49B6EC;
+					}
+					.weekly-summary .progress {
+						opacity: 0.5;
+						height: 10px;
+						-ms-border-radius: 5px;
+						-moz-border-radius: 5px;
+						-webkit-border-radius: 5px;
+						-o-border-radius: 5px;
+						border-radius: 5px;
+						background: rgb(59,205,249);
+						background: -moz-linear-gradient(top,  rgba(59,205,249,1) 0%, rgba(59,205,249,1) 50%, rgba(58,199,242,1) 51%, rgba(57,199,246,1) 100%);
+						background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,205,249,1)), color-stop(50%,rgba(59,205,249,1)), color-stop(51%,rgba(58,199,242,1)), color-stop(100%,rgba(57,199,246,1)));
+						background: -webkit-linear-gradient(top,  rgba(59,205,249,1) 0%,rgba(59,205,249,1) 50%,rgba(58,199,242,1) 51%,rgba(57,199,246,1) 100%);
+						background: -o-linear-gradient(top,  rgba(59,205,249,1) 0%,rgba(59,205,249,1) 50%,rgba(58,199,242,1) 51%,rgba(57,199,246,1) 100%);
+						background: -ms-linear-gradient(top,  rgba(59,205,249,1) 0%,rgba(59,205,249,1) 50%,rgba(58,199,242,1) 51%,rgba(57,199,246,1) 100%);
+						background: linear-gradient(to bottom,  rgba(59,205,249,1) 0%,rgba(59,205,249,1) 50%,rgba(58,199,242,1) 51%,rgba(57,199,246,1) 100%);
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bcdf9', endColorstr='#39c7f6',GradientType=0 );
+					}
+					.weekly-summary .popup-table td { padding: 3px 0; }
+				</style>
+				<style>
+					.zb { display: block; float: left; width: 10px; height: 10px; border-radius: 2px; margin-right: 2px; margin-top: 3px; }
+					.z2b { background:rgb(224,107,56) }
+					.z3b { background:rgb(252,203,33) }
+					.z1b { background:rgb(138,204,13) }
+					.z0b { background:rgb(193,240,142) }
+				</style>
+				<div class="clear30"></div>
+		<!-- //WEEKLY PROGRESS GRAPH -->
+			</div>
+
+
+
+	<script>
+	$(function () {
+		if (!spl.tour)
+			spl.tour = new SPLTour({ id: 1, tour:'ut-diary', step: 'us-'});
+	});
+	</script>
+			</div>
+		<div class="sidebar">
+						<div class="scoreboard-mini">
+	<h2>Activity leaderboard</h2>
+	<ul>
+							<li>
+			<div class="pos" title="Rank">6.</div>
+			<img src="https://gfx.sportlyzer.com/upics/6097_35.png" class="pic" width="32" height="32" alt="Jaan Saks" title="Jaan Saks">			<div class="txt">
+								<a class="name" href="https://beta.sportlyzer.com/profile/5843" title="Jaan Saks">Jaan S.</a>
+				
+								<span class="points"><span class="trend-up" title="Gained 18 to activity score"></span><span title="Current activity score">241</span></span>
+				<div class="bar" title="20%"><div class="value" style="width:20%;"></div></div>
+			</div>
+		</li>
+							<li>
+			<div class="pos" title="Rank">7.</div>
+			<img src="https://gfx.sportlyzer.com/upics/1184_35.png" class="pic" width="32" height="32" alt="Hanno Vene" title="Hanno Vene">			<div class="txt">
+								<a class="name" href="https://beta.sportlyzer.com/profile/39" title="Hanno Vene">Hanno V.</a>
+				
+								<span class="points"><span class="trend-down" title="Lost 15 from activity score"></span><span title="Current activity score">229</span></span>
+				<div class="bar" title="19%"><div class="value" style="width:19%;"></div></div>
+			</div>
+		</li>
+							<li>
+			<div class="pos" title="Rank">8.</div>
+			<img src="https://gfx.sportlyzer.com/upics/7050_35.png" class="pic" width="32" height="32" alt="Tõnis Saag" title="Tõnis Saag">			<div class="txt">
+								<a class="name" href="https://beta.sportlyzer.com/profile/33" title="Tõnis Saag">Tõnis S.</a>
+				
+								<span class="points"><span class="trend-up" title="Gained 1 to activity score"></span><span title="Current activity score">217</span></span>
+				<div class="bar" title="18%"><div class="value" style="width:18%;"></div></div>
+			</div>
+		</li>
+							<li>
+			<div class="pos" title="Rank">9.</div>
+			<img src="https://gfx.sportlyzer.com/upics/4902_35.png" class="pic" width="32" height="32" alt="Indrek Altpere" title="Indrek Altpere">			<div class="txt">
+								<span class="name">You</span>
+								<span class="points"><span class="trend-up" title="Gained 2 to activity score"></span><span title="Current activity score">211</span></span>
+				<div class="bar" title="17%"><div class="value" style="width:17%;"></div></div>
+			</div>
+		</li>
+							<li>
+			<div class="pos" title="Rank">10.</div>
+			<img src="https://gfx.sportlyzer.com/upics/69_35.png" class="pic" width="32" height="32" alt="Aave Hannus" title="Aave Hannus">			<div class="txt">
+								<a class="name" href="https://beta.sportlyzer.com/profile/40" title="Aave Hannus">Aave H.</a>
+				
+								<span class="points"><span class="trend-down" title="Lost 5 from activity score"></span><span title="Current activity score">27</span></span>
+				<div class="bar" title="2%"><div class="value" style="width:2%;"></div></div>
+			</div>
+		</li>
+		</ul>
+	<span class="morebtn">
+		<a href="https://beta.sportlyzer.com/?page=scoreboard">Show all</a>
+	</span>
+</div>
+		
+	</div>		<div class="clear1"></div>
+	</div>
+	<!-- FOOTER -->
+<div class="footer">
+	<dl>
+		<dt>Sportlyzer</dt>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','about_us');" href="https://blog.sportlyzer.com/about/">About us</a></dd>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','tutorials');" href="https://blog.sportlyzer.com/tutorials/">Tutorials</a></dd>
+		
+	</dl>
+	<dl>
+		<dt>Legal</dt>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','terms_of_service');" href="https://beta.sportlyzer.com/?page=tos">Terms of Service</a></dd>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','privacy_policy');" href="https://beta.sportlyzer.com/?page=tos#privacy">Privacy Policy</a></dd>
+	</dl>
+
+	<dl>
+		<dt>Follow us</dt>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','twitter');" href="https://twitter.com/sportlyzer">Twitter</a></dd>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','facebook');" href="https://www.facebook.com/sportlyzer">Facebook</a></dd>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','news_rss');" href="https://blog.sportlyzer.com/feed/">News RSS</a></dd>
+		<dd><a target="_blank" onclick="triggerEvent('logged_in_footer','blog');" href="https://blog.sportlyzer.com/">Blog</a></dd>
+	</dl>
+
+	<dl>
+		<dt>Contact us</dt>
+		<dd><a onclick="triggerEvent('logged_in_footer','e_mail');" id="emaillink" href="mailto:hello@sportlyzer.com">E-Mail</a></dd>
+		<dd><a onclick="triggerEvent('logged_in_footer','forum');" href="https://beta.sportlyzer.com/?toforum=1" target="_blank">Forum</a></dd>
+
+	</dl>
+
+	<span class="logo"></span>
+	<div style="float: right; font-size: 10px; clear: right; color: #C0C8CC; text-shadow: 0 1px 0 black;">8078.0109.1553</div>	<div class="clear1"></div>
+</div>
+<script type="text/javascript">
+	$('#emaillink').attr('href', $('#emaillink').attr('href').replace('__','@'));
+</script>
+<!-- //FOOTER -->
+</div><div class="modal-overlay" style="display:none"></div>
+<!--[if lt IE 8]>
+<style type="text/css" id="iecss">
+body { margin-bottom:42px }
+</style>
+<div style="position:absolute;position:fixed;bottom:0;width:100%;height:42px;" id="iewarning"><center>
+<div style="position:absolute;width:820px;height:42px;margin-left:-420px">
+	<a target="_blank" href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode" style="position:relative"><img src="https://gfx.sportlyzer.com/gfx/upgrade.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a>
+	<a href="javascript:;" onclick="$('#iewarning, #iecss').remove();cancelEvent(event);" style="position:absolute;top:0;right:0;color:#000;font-weight:bold;text-decoration:none">[X]</a>
+</div>
+</center></div>
+<![endif]--><script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript" src="https://gfx.sportlyzer.com/js/maps.js?7218"></script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+</script>
+
+
+<!-- gentime=0.07034 (i=0.00676, errm=0.000313, sess=0.000210, mysql=0.000438, lu=0.003570, smi=0.000963, m=0.048245, smd=0.015333, curmem=8392304(9175040) peakmem=8637664(9175040) 	(mysql: queries:77	 time_spent_total:0.02301335	 sel_rows_total:138	 aff_rows_total:139	 queries: not available, set debug to true to see more data) --><div id="qtip-rcontainer"></div><div class="tour-tooltip ux-tour ut-diary us-diary-days" data-selector=".wk-graph .day:first .add" style="display: none">
+	<div class="headline">
+		<span class="txt">Click to access diary entries</span>
+		<span class="pointer"></span>
+	</div>
+	<div class="descr">
+		<p>Choose a day and click on the "+"-button to log Workouts, Sickness/Injuries, Daily notes and Daily metrics.</p>
+		<div class="nav">
+			<a href="javascript:;" class="skip ux-skip">Skip tour</a>
+			<a href="#next" class="next ux-next">Next step ►</a>
+		</div>
+	</div>
+</div><div class="tour-tooltip ux-tour ut-diary us-diary-tools" data-selector=".sub-block &gt; .button-menu" style="display: none">
+	<div class="headline">
+		<span class="txt">Additional diary options</span>
+		<span class="pointer"></span>
+	</div>
+	<div class="descr">
+		<p>1. Sync with other online diaries<br> 2. Upload training files<br> 3. Automated training planner (BETA)</p>
+		<div class="nav">
+			<a href="#back" class="back ux-back">◄ Back</a>
+			<a href="javascript:;" class="skip ux-skip">Skip tour</a>
+			<a href="?page=tour&amp;action=advance&amp;tour=1" class="next ux-next">Next step ►</a>
+		</div>
+	</div>
+</div><div id="ui-tooltip-32" class="ui-tooltip qtip ui-tooltip-default ui-tooltip-black ui-tooltip-pos-tc" tracking="false" role="alert" aria-live="polite" aria-atomic="false" aria-describedby="ui-tooltip-32-content" aria-hidden="true" style="width: 91px; z-index: 15001;"><div class="ui-tooltip-tip" style="background-color: transparent !important; border: 0px !important; height: 8px; width: 8px; left: 50%; margin-left: -4px; top: -8px;"><canvas height="8" width="8" style="background-color: transparent !important; border: 0px !important;"></canvas></div><div class="ui-tooltip-content" id="ui-tooltip-32-content" aria-atomic="true">Add daily info</div></div><div id="healthinfo2_modal-overlay" class="modal-overlay"><span style="display:none">HealthInfo2</span></div><div id="healthinfo2_modal" class="newPopup daily-inf" style="margin-top: -249px; margin-left: -215px; left: 50%; top: 478px;"><div class="inner"><form action="?page=workouts2&amp;action=healthinfo&amp;date=2014-01-09" method="post" class="ajaxform notifychanges" id="all_healthinfo_forms">
+	<div style="position: absolute; display: none; z-index: 10000;" class="ajaxloader dataloader-popup" id="ajaximage_all_healthinfo_forms" title="Loading"></div>
+	<input type="hidden" name="hi_date" value="2014-01-09">
+		<h2 class="fl-l noline">Daily info of 9th January</h2>
+	
+	<div class="clear10"></div>
+	<div class="daily-form">
+		<label>Weight</label><input type="text" name="hi[weight]" placeholder="76" class="u-autocompleter u-weight ui-autocomplete-input" value="" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><span class="unit">kg</span>
+	</div>
+	<div class="daily-form">
+		<label>Height</label><input id="height-hinfo" type="text" name="hi[height]" class="u-circumference u-autocompleter ui-autocomplete-input" placeholder="188" value="" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span><span class="unit">cm</span>
+	</div>
+
+	<div class="daily-form">
+		<label>Sleeping hrs</label><input type="text" name="hi[sleep]" placeholder="5.5" value=""><span class="unit">h</span>
+	</div>
+
+	<div class="daily-form">
+		<label>Fat %</label><input type="text" name="hi[fat_percentage]" placeholder="" value=""><span class="unit">%</span>
+	</div>
+	<div class="daily-form">
+		<label>Systolic BP</label><input type="text" name="hi[bp_systolic]" placeholder="" value=""><span class="unit">mmHg</span>
+	</div>
+	<div class="daily-form">
+		<label>Diastolic BP</label><input type="text" name="hi[bp_diastolic]" placeholder="" value=""><span class="unit">mmHg</span>
+	</div>
+
+	<div class="clear20"></div>
+	<h3 style="font-size: 15px">Morning heart rate</h3>
+	<div class="clear5"></div>
+	<div class="daily-form">
+		<label>Lying down</label><input class="orto-lying" type="text" name="hi[heartrate]" placeholder="100" value=""><span class="unit">bpm</span>
+	</div>
+	<div class="daily-form">
+		<label>Standing</label><input class="orto-standing" name="hi[heartrate_standing]" type="text" placeholder="" value=""><span class="unit">bpm</span>
+	</div>
+	<div class="clear5"></div>
+	<div style="padding: 0 0 0 5px">
+		<p style="text-align: center">Orthostatic test result: <strong class="orto-result">-</strong></p>
+	</div>
+	
+	<div class="clear20"></div>
+		<div class="sliders">
+		<label>Fatigue</label>
+<div class="slider-feel-n js-slider">
+	<input name="hi[f_tiredness]" type="hidden" class="slidervalue required" value="">
+	<div class="track">
+		<div class="active" style="width: 15px;">
+			<div class="handler" style="width: 34px; height: 34px; left: -2px;"></div>
+		</div>
+	</div>
+</div>
+<div class="feel-emoticon feel-0"></div>		<div class="clear1"></div>
+		<label>Muscle pain</label>
+<div class="slider-feel-n js-slider">
+	<input name="hi[f_muscle_pain]" type="hidden" class="slidervalue required" value="">
+	<div class="track">
+		<div class="active" style="width: 15px;">
+			<div class="handler" style="width: 34px; height: 34px; left: -2px;"></div>
+		</div>
+	</div>
+</div>
+<div class="feel-emoticon feel-0"></div>		<div class="clear1"></div>
+		<label>Stress</label>
+<div class="slider-feel-n js-slider">
+	<input name="hi[f_stress]" type="hidden" class="slidervalue required" value="">
+	<div class="track">
+		<div class="active" style="width: 15px;">
+			<div class="handler" style="width: 34px; height: 34px; left: -2px;"></div>
+		</div>
+	</div>
+</div>
+<div class="feel-emoticon feel-0"></div>		<div class="clear1"></div>
+		<label>Sleep problems</label>
+<div class="slider-feel-n js-slider">
+	<input name="hi[f_sleep_quality]" type="hidden" class="slidervalue required" value="">
+	<div class="track">
+		<div class="active" style="width: 15px;">
+			<div class="handler" style="width: 34px; height: 34px; left: -2px;"></div>
+		</div>
+	</div>
+</div>
+<div class="feel-emoticon feel-0"></div>		<div class="clear1"></div>
+		<label>Work/school load</label>
+<div class="slider-feel-n js-slider">
+	<input name="hi[f_work_load]" type="hidden" class="slidervalue required" value="">
+	<div class="track">
+		<div class="active" style="width: 15px;">
+			<div class="handler" style="width: 34px; height: 34px; left: -2px;"></div>
+		</div>
+	</div>
+</div>
+<div class="feel-emoticon feel-0"></div>		<div class="clear1"></div>
+	</div>
+
+	<div class="clear1"></div>
+			<div class="actions noline">
+							<a href="javascript:;" onclick="if (orto.hasValues() &amp;&amp; !orto.check() &amp;&amp; !confirm('Are you sure that your standing heart rate was lower than when you were lying down?')) return false; saveHFormsEx();" class="button-pri">Save</a>
+				<a href="javascript:;" onclick="jModalNew.close('healthinfo2_modal');" class="button-link fl-r">Cancel</a>
+					</div>
+		<input type="hidden" name="___nonce" value="92399227_b0513f0c89ba8474aaa80dd0186e8106660982e6">
+	</form>
+
+</div></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="display: none;"></ul><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="display: none;"></ul></body></html>
