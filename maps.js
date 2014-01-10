@@ -1082,6 +1082,10 @@ function loadRouteInfo(response, elevationChartTarget, speedChartTarget) {
 	if (speedChartTarget) {
 		showSpeedChart(speedChartTarget, response.waypoints);
 	}
+
+	// Attach the tracking behavior to statsChart
+	var behavior = new MarkerTrackingBahavior(routes.map, response.waypoints);
+	behavior.bindChartSeries(statsCharts.speed_hr_chart.series[0]);
 }
 
 function uploadRoute() {
